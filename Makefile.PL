@@ -2,16 +2,21 @@
 use strict;
 use warnings;
 
-
+use 5.010;
 
 use ExtUtils::MakeMaker 6.30;
 
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "The great new DarkSky::API!",
+  "ABSTRACT" => "The great new DarkSky::API!\r",
   "AUTHOR" => "Martin-Louis Bright <mlbright\@gmail.com>",
-  "BUILD_REQUIRES" => {},
+  "BUILD_REQUIRES" => {
+    "Data::Dumper" => 0,
+    "Test::More" => 0,
+    "strict" => 0,
+    "warnings" => 0
+  },
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
   },
@@ -19,8 +24,13 @@ my %WriteMakefileArgs = (
   "EXE_FILES" => [],
   "LICENSE" => "perl",
   "NAME" => "DarkSky::API",
-  "PREREQ_PM" => {},
-  "VERSION" => "0.001",
+  "PREREQ_PM" => {
+    "JSON" => 0,
+    "List::MoreUtils" => 0,
+    "Mojo::UserAgent" => 0,
+    "Moose" => 0
+  },
+  "VERSION" => "0.01",
   "test" => {
     "TESTS" => "t/*.t"
   }

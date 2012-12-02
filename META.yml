@@ -1,8 +1,12 @@
 ---
-abstract: 'The great new DarkSky::API!'
+abstract: "The great new DarkSky::API!\r"
 author:
   - 'Martin-Louis Bright <mlbright@gmail.com>'
-build_requires: {}
+build_requires:
+  Data::Dumper: 0
+  Test::More: 0
+  strict: 0
+  warnings: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
@@ -12,4 +16,10 @@ meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: DarkSky-API
-version: 0.001
+requires:
+  JSON: 0
+  List::MoreUtils: 0
+  Mojo::UserAgent: 0
+  Moose: 0
+  perl: 5.010
+version: 0.01
