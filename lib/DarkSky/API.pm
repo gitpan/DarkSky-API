@@ -14,11 +14,11 @@ the United States.
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 our $DARKSKY_API_URL = 'https://api.darkskyapp.com/v1';
 
@@ -104,13 +104,16 @@ sub precipitation {
     while ( my @triplet = $it->() ) {
         push @triplets, join( ',', @triplet );
     }
-    my $tx = Mojo::UserAgent->new()->get(
-        join( '/',
-            $DARKSKY_API_URL, "brief_forecast",
-            $self->api_key, join( ';', @triplets ) )
-    );
-    return unless ( defined $tx );
-    return decode_json( $tx->res->body ) if ( $tx->res->code == 200 );
+    my $url = join( '/',
+        $DARKSKY_API_URL, "precipitation",
+        $self->api_key, join( ';', @triplets ) );
+    my $tx = Mojo::UserAgent->new()->get($url);
+    unless ( defined $tx ) {
+        return;
+    }
+    if ( $tx->res->code == 200 ) {
+        return decode_json( $tx->res->body );
+    }
 }
 
 =head2 interesting
@@ -125,8 +128,12 @@ sub interesting {
     my ($self) = @_;
     my $tx = Mojo::UserAgent->new()
       ->get( join( '/', $DARKSKY_API_URL, "interesting", $self->api_key ) );
-    return unless ( defined $tx );
+
+    unless ( defined $tx ) {
+        return;
+    }
     return decode_json( $tx->res->body ) if ( $tx->res->code == 200 );
+    return $tx->res->code();
 }
 
 =head1 AUTHOR

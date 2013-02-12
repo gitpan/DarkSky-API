@@ -1,5 +1,5 @@
 ---
-abstract: "The Dark Sky API lets you query for short-term \nprecipitation forecast data at geographical points inside\nthe United States."
+abstract: "The Dark Sky API lets you query for short-term \r\nprecipitation forecast data at geographical points inside\r\nthe United States.\r"
 author:
   - 'Martin-Louis Bright <mlbright@gmail.com>'
 build_requires:
@@ -10,7 +10,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300028, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Zilla version 4.300030, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -22,4 +22,4 @@ requires:
   Mojo::UserAgent: 0
   Moose: 0
   perl: 5.010
-version: 0.03
+version: 0.04
