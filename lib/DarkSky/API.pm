@@ -14,11 +14,11 @@ the United States.
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 our $DARKSKY_API_URL = 'https://api.darkskyapp.com/v1';
 
@@ -35,10 +35,10 @@ at geographical points inside the United States.
     my $darksky = DarkSky::API->new( api_key => '<your key here>' );
     
     # Returns a forecast for the next hour at a given location.
-    my $forecast = $darksky->forecast( '42.7243', '-73.6927' );
+    my $forecast = $darksky->forecast({ latitude => '42.7243', longitude => '-73.6927' });
 
     # Returns a brief forecast for the next hour at a given location.
-    my $brief_forecast = $darksky->brief_forecast( '42.7243', '-73.6927' );
+    my $brief_forecast = $darksky->brief_forecast({ latitude => '42.7243', longitude => '-73.6927' });
 
     # Returns forecasts for a collection of arbitrary points.
     my $precipitation = $darksky->precipitation(['42.7','-73.6',1325607100,'42.0','-73.0',1325607791]);
@@ -54,7 +54,7 @@ at geographical points inside the United States.
 
 Returns a forecast for the next hour at a given location.
 
-  my $forecast = $darksky->forecast( '42.7243', '-73.6927' );
+  my $forecast = $darksky->forecast({ latitude => '42.7243', longitude => '-73.6927' });
     
 =cut
 
@@ -73,7 +73,7 @@ sub forecast {
 
 Returns a brief forecast for the next hour at a given location.
 
-  my $brief_forecast = $darksky->brief_forecast( '42.7243', '-73.6927' );
+  my $brief_forecast = $darksky->brief_forecast({ latitude => '42.7243', longitude => '-73.6927' });
 
 =cut
 

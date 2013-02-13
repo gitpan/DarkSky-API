@@ -1,5 +1,5 @@
 ---
-abstract: "The Dark Sky API lets you query for short-term \r\nprecipitation forecast data at geographical points inside\r\nthe United States.\r"
+abstract: "The Dark Sky API lets you query for short-term \nprecipitation forecast data at geographical points inside\nthe United States."
 author:
   - 'Martin-Louis Bright <mlbright@gmail.com>'
 build_requires:
@@ -22,4 +22,4 @@ requires:
   Mojo::UserAgent: 0
   Moose: 0
   perl: 5.010
-version: 0.04
+version: 0.05

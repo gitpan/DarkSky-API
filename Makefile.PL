@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "The Dark Sky API lets you query for short-term \r\nprecipitation forecast data at geographical points inside\r\nthe United States.\r",
+  "ABSTRACT" => "The Dark Sky API lets you query for short-term \nprecipitation forecast data at geographical points inside\nthe United States.",
   "AUTHOR" => "Martin-Louis Bright <mlbright\@gmail.com>",
   "BUILD_REQUIRES" => {
     "Data::Dumper" => 0,
@@ -30,7 +30,7 @@ my %WriteMakefileArgs = (
     "Mojo::UserAgent" => 0,
     "Moose" => 0
   },
-  "VERSION" => "0.04",
+  "VERSION" => "0.05",
   "test" => {
     "TESTS" => "t/*.t"
   }
